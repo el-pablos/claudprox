@@ -1,0 +1,41 @@
+# secrets & env
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# build & deps
+node_modules/
+.next/
+dist/
+build/
+.turbo/
+*.tsbuildinfo
+
+.turbo/
+# tooling lokal (jangan publik)
+.opencode-jce/
+.omo/
+.opencode-context.md
+
+# prisma
+prisma/*.db
+prisma/dev.db*
+
+# logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# os
+.DS_Store
+Thumbs.db
+
+# direktori referensi (jangan publik)
+docs-dan-prompt-komponen/
+ss-contoh/
+
+# semua markdown kecuali README
+*.md
+!README.md
