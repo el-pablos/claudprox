@@ -1,0 +1,157 @@
+// Prisma schema untuk TamsHub ClaudProx.
+// Sumber kebenaran: ENGINEERING.md (billing Opsi A, 1 subscription wallet per user).
+// Token dipakai BigInt karena kuota bisa mencapai ratusan juta.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum SubStatus {
+  ACTIVE
+  EXPIRED
+  SUSPENDED
+}
+
+enum PaymentMethod {
+  MANUAL_TRANSFER
+  QRIS
+  EWALLET
+}
+
+enum PaymentStatus {
+  PENDING
+  CONFIRMED
+  REJECTED
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  role         Role     @default(USER)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  apiKeys       ApiKey[]
+  subscriptions Subscription[]
+  usageLogs     UsageLog[]
+  payments      Payment[]
+  refills       Refill[]
+}
+
+model ApiKey {
+  id        String   @id @default(cuid())
+  userId    String
+  keyHash   String   @unique
+  label     String?
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  lastUsedAt DateTime?
+
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  usageLogs UsageLog[]
+
+  @@index([userId])
+}
+
+model Plan {
+  id           String   @id @default(cuid())
+  name         String   @unique
+  tokenQuota   BigInt
+  durationDays Int
+  priceIdr     Int
+  rateLimitRpm Int
+  sortOrder    Int      @default(0)
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  subscriptions Subscription[]
+  payments      Payment[]
+}
+
+model Subscription {
+  id              String    @id @default(cuid())
+  userId          String
+  planId          String
+  status          SubStatus @default(ACTIVE)
+  tokensTotal     BigInt
+  tokensRemaining BigInt
+  startedAt       DateTime  @default(now())
+  expiresAt       DateTime
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  plan      Plan       @relation(fields: [planId], references: [id], onDelete: Restrict)
+  usageLogs UsageLog[]
+  refills   Refill[]
+
+  @@index([userId, status])
+}
+
+model UsageLog {
+  id               String   @id @default(cuid())
+  userId           String
+  subscriptionId   String?
+  apiKeyId         String?
+  model            String
+  promptTokens     Int      @default(0)
+  completionTokens Int      @default(0)
+  totalTokens      Int      @default(0)
+  estimated        Boolean  @default(false)
+  createdAt        DateTime @default(now())
+
+  user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  subscription Subscription? @relation(fields: [subscriptionId], references: [id], onDelete: SetNull)
+  apiKey       ApiKey?       @relation(fields: [apiKeyId], references: [id], onDelete: SetNull)
+
+  @@index([userId, createdAt])
+}
+
+model Payment {
+  id          String        @id @default(cuid())
+  userId      String
+  planId      String
+  amountIdr   Int
+  method      PaymentMethod @default(MANUAL_TRANSFER)
+  status      PaymentStatus @default(PENDING)
+  proofUrl    String?
+  note        String?
+  confirmedAt DateTime?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  plan    Plan     @relation(fields: [planId], references: [id], onDelete: Restrict)
+  refills Refill[]
+
+  @@index([status, createdAt])
+}
+
+model Refill {
+  id             String   @id @default(cuid())
+  userId         String
+  subscriptionId String
+  paymentId      String
+  tokensAdded    BigInt
+  daysAdded      Int      @default(0)
+  createdAt      DateTime @default(now())
+
+  user         User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  subscription Subscription @relation(fields: [subscriptionId], references: [id], onDelete: Restrict)
+  payment      Payment      @relation(fields: [paymentId], references: [id], onDelete: Restrict)
+
+  @@index([userId, createdAt])
+}
