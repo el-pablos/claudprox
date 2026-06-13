@@ -4,6 +4,25 @@ import * as React from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 export default function AdminLoginPage() {
+  return (
+    <React.Suspense fallback={<LoginFallback />}>
+      <LoginInner />
+    </React.Suspense>
+  );
+}
+
+function LoginFallback() {
+  return (
+    <main className="relative min-h-screen overflow-hidden">
+      <div className="absolute inset-0 ctos-grid opacity-40" aria-hidden />
+      <div className="relative flex min-h-screen items-center justify-center px-6">
+        <div className="text-sm text-slate-500">Memuat...</div>
+      </div>
+    </main>
+  );
+}
+
+function LoginInner() {
   const router = useRouter();
   const params = useSearchParams();
   const [email, setEmail] = React.useState("");

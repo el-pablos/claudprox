@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { listUserModels } from "@claudprox/shared";
-import { DocsHeader } from "../page";
+import { DocsHeader } from "../../../components/docs/DocsHeader";
 import { Footer } from "../../../components/landing/Footer";
 
 export const metadata: Metadata = {
