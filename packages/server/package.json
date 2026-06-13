@@ -1,0 +1,30 @@
+{
+  "name": "@claudprox/server",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Layer auth, API key lifecycle, dan billing bersama untuk web ClaudProx",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@claudprox/shared": "workspace:*",
+    "@prisma/client": "^5.10.0",
+    "bcrypt": "^5.1.1",
+    "jsonwebtoken": "^9.0.2",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/node": "^20.11.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.3.0"
+  }
+}
