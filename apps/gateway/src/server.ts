@@ -80,7 +80,12 @@ async function start(): Promise<void> {
   }
 }
 
-// Jalankan hanya bila dieksekusi langsung (bukan saat diimpor pengujian).
-if (process.argv[1] !== undefined && process.argv[1].includes("server")) {
+// Jalankan bila dieksekusi langsung (node dist/server.js) atau di produksi via
+// PM2. PM2 fork mode membungkus entry lewat ProcessContainerFork sehingga
+// process.argv[1] tidak menunjuk server.js; NODE_ENV=production dari ecosystem
+// memastikan start() tetap terpanggil. Saat test (vitest via tsx) kedua kondisi
+// false sehingga server tidak auto-start.
+const runDirectly = process.argv[1]?.includes("server") ?? false;
+if (process.env.NODE_ENV === "production" || runDirectly) {
   void start();
 }
