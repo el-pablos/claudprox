@@ -1,0 +1,26 @@
+{
+  "name": "claudprox",
+  "version": "0.1.0",
+  "private": true,
+  "description": "TamsHub ClaudProx - reseller gateway untuk proxy.tams.codes",
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "pnpm -r build",
+    "build:shared": "pnpm --filter @claudprox/shared build",
+    "test": "pnpm -r test",
+    "test:gateway": "pnpm --filter gateway test",
+    "typecheck": "pnpm -r exec tsc --noEmit",
+    "prisma:generate": "prisma generate",
+    "prisma:validate": "prisma validate",
+    "prisma:seed": "tsx prisma/seed.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "prisma": "^5.10.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0"
+  }
+}
