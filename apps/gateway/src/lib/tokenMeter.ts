@@ -2,7 +2,7 @@
 // dan dekrement kuota subscription secara atomik.
 
 import { encode } from "gpt-tokenizer";
-import type { PrismaClient } from "@prisma/client";
+import { Prisma, type PrismaClient } from "@prisma/client";
 import type { UpstreamUsage } from "@claudprox/shared";
 
 /** Hasil ekstraksi token dari respons upstream. */
@@ -77,7 +77,7 @@ export async function decrementTokens(
 ): Promise<DecrementResult> {
   const usedBig = BigInt(Math.max(0, Math.trunc(used)));
 
-  return prisma.$transaction(async (tx) => {
+  return prisma.$transaction(async (tx: Prisma.TransactionClient) => {
     const updated = await tx.subscription.updateMany({
       where: {
         id: subscriptionId,

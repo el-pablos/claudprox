@@ -5,7 +5,7 @@
 
 import { z } from "zod";
 import type { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
-import { toUpstreamModel, toUserModel } from "../lib/modelTransform.js";
+import { toUpstreamModel } from "../lib/modelTransform.js";
 import { forwardChat } from "../lib/upstream.js";
 import { decrementTokens, extractUsage } from "../lib/tokenMeter.js";
 import { pipeSse } from "../lib/sseProxy.js";
