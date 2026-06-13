@@ -1,0 +1,33 @@
+{
+  "name": "gateway",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Gateway reseller ClaudProx ke proxy.tams.codes",
+  "main": "dist/server.js",
+  "prisma": {
+    "schema": "../../prisma/schema.prisma"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@claudprox/shared": "workspace:*",
+    "@fastify/cors": "^9.0.1",
+    "@prisma/client": "^5.10.0",
+    "dotenv": "^16.4.5",
+    "fastify": "^4.26.0",
+    "gpt-tokenizer": "^2.1.2",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "prisma": "^5.10.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.3.0"
+  }
+}
