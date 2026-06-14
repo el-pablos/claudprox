@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { createPortal } from "react-dom";
 import { LinkButton } from "../ui/Button";
 
 interface NavItem {
@@ -111,8 +112,9 @@ function MobileDrawer({ open, onClose }: { open: boolean; onClose: () => void })
   }, [open, onClose]);
 
   if (!open) return null;
+  if (typeof document === "undefined") return null;
 
-  return (
+  return createPortal(
     <div className="sm:hidden">
       <div className="fixed inset-0 z-50 bg-black/60" aria-hidden="true" onClick={onClose} />
       <div
@@ -155,7 +157,8 @@ function MobileDrawer({ open, onClose }: { open: boolean; onClose: () => void })
           </LinkButton>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 
