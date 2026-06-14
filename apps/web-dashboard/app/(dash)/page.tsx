@@ -269,7 +269,7 @@ function UsageChart({ entries }: { entries: RecentEntry[] }) {
         {chronological.map((e) => {
           const heightPct = Math.max(4, Math.round((e.totalTokens / maxToken) * 100));
           return (
-            <div key={e.id} className="group relative flex flex-1 flex-col items-center justify-end">
+            <div key={e.id} className="group relative flex h-full flex-1 flex-col items-center justify-end">
               <div
                 className="w-full rounded-t bg-gradient-to-t from-secondary to-primary transition-opacity hover:opacity-80"
                 style={{ height: `${heightPct}%` }}
