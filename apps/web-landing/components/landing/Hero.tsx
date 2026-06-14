@@ -60,7 +60,7 @@ function TerminalPanel() {
           <span className="h-3 w-3 rounded-full bg-success/80" aria-hidden="true" />
           <span className="ml-2 font-mono text-xs text-foreground-muted">request.sh</span>
         </div>
-        <pre className="overflow-x-auto px-4 py-4 font-mono text-[13px] leading-relaxed text-foreground-muted">
+        <pre tabIndex={0} role="region" aria-label="Contoh perintah request.sh" className="overflow-x-auto px-4 py-4 font-mono text-[13px] leading-relaxed text-foreground-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
 <span className="text-foreground-muted">{"# Ganti BASE_URL, langsung jalan"}</span>{"\n"}
 <span className="text-secondary">curl</span>{" https://api-claudprox.tams.codes/v1/chat/completions \\\n"}
 {"  -H "}<span className="text-accent">{'"Authorization: Bearer cpx_live_xxx"'}</span>{" \\\n"}
