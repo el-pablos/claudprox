@@ -11,36 +11,59 @@ html {
 }
 
 body {
-  background-color: #05070a;
-  color: #e5edf5;
+  background-color: #181818;
+  color: #F7F7F7;
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Grid CtOS pada latar hero */
+/* Grid dekoratif dengan aksen orange */
 .ctos-grid {
   background-image:
-    linear-gradient(rgba(0, 229, 255, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 229, 255, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(255, 87, 34, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 87, 34, 0.06) 1px, transparent 1px);
   background-size: 40px 40px;
 }
 
 .ctos-glow {
-  text-shadow: 0 0 12px rgba(0, 229, 255, 0.55);
+  text-shadow: 0 0 16px rgba(255, 87, 34, 0.45);
 }
 
-/* Scrollbar gelap */
+.brand-gradient {
+  background-image: linear-gradient(135deg, #FF5722 0%, #673AB7 100%);
+}
+
+.brand-gradient-text {
+  background-image: linear-gradient(135deg, #FF5722 0%, #FFEB3B 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0b0f15;
+  background: #1f1f1f;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1b2733;
+  background: #333333;
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0891a8;
+  background: #FF5722;
 }

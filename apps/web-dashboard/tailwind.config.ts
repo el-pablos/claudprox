@@ -1,23 +1,62 @@
 import type { Config } from "tailwindcss";
 
+// Design system TamsHub ClaudProx — Contrasting Vibrancy.
+// Palette inti: latar gelap #181818, teks #F7F7F7, aksen orange #FF5722,
+// purple #673AB7, dan yellow #FFEB3B untuk fokus/hover/highlight terkontrol.
+// Namespace `ctos` di-remap ke palette baru supaya komponen lama ikut berubah,
+// dan token semantik `brand` dipakai komponen struktural baru.
 const config: Config = {
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
+        // Token semantik utama (dipakai komponen redesign).
+        background: "#181818",
+        "background-elevated": "#1f1f1f",
+        surface: "#1f1f1f",
+        "surface-hover": "#262626",
+        "surface-active": "#2e2e2e",
+        border: "#333333",
+        "border-strong": "#4d4d4d",
+        foreground: "#F7F7F7",
+        "foreground-muted": "#a1a1aa",
+        primary: "#FF5722",
+        "primary-foreground": "#181818",
+        secondary: "#673AB7",
+        "secondary-foreground": "#F7F7F7",
+        accent: "#FFEB3B",
+        "accent-foreground": "#181818",
+        "focus-ring": "#FFEB3B",
+        success: "#22c55e",
+        warning: "#f59e0b",
+        danger: "#ef4444",
+        info: "#673AB7",
+        overlay: "rgba(0,0,0,0.6)",
+        skeleton: "#262626",
+        // Namespace lama di-remap ke palette baru (back-compat instan).
         ctos: {
-          bg: "#05070a",
-          panel: "#0b0f15",
-          border: "#1b2733",
-          accent: "#00e5ff",
-          accentDim: "#0891a8",
-          warn: "#ffb000",
-          danger: "#ef4444",
-          ok: "#22c55e",
+          bg: "#181818",
+          panel: "#1f1f1f",
+          border: "#333333",
+          accent: "#FF5722",
+          accentDim: "#e64a19",
+          warn: "#f59e0b",
+        },
+        brand: {
+          orange: "#FF5722",
+          "orange-dim": "#e64a19",
+          purple: "#673AB7",
+          "purple-dim": "#5e35b1",
+          yellow: "#FFEB3B",
         },
       },
       fontFamily: {
         mono: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+      },
+      boxShadow: {
+        "elev-1": "0 1px 2px rgba(0,0,0,0.4)",
+        "elev-2": "0 4px 16px rgba(0,0,0,0.5)",
+        glow: "0 0 24px rgba(255,87,34,0.25)",
       },
     },
   },
