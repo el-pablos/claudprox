@@ -21,11 +21,16 @@ log "Ambil rentang IP Cloudflare resmi"
 # TANPA pernah me-reset firewall -> anti lock-out / anti partial-outage.
 CF_V4=$(curl -fsS -m 15 https://www.cloudflare.com/ips-v4 || true)
 CF_V6=$(curl -fsS -m 15 https://www.cloudflare.com/ips-v6 || true)
-if ! echo "$CF_V4" | grep -qE '^([0-9]{1,3}\.){3}[0-9]{1,3}/[0-9]{1,2}$'; then
-  echo "GAGAL/INVALID ambil IPv4 Cloudflare, abort (firewall TIDAK diubah)"; exit 1
+CF_V4_COUNT=$(echo "$CF_V4" | grep -cE '^([0-9]{1,3}\.){3}[0-9]{1,3}/[0-9]{1,2}$')
+CF_V6_COUNT=$(echo "$CF_V6" | grep -cE '^[0-9a-fA-F:]+/[0-9]{1,3}$')
+# Cloudflare publikasikan ~15 range v4 + ~7 range v6. Ambang minimum menangkap
+# respons ter-truncate (mis. hanya 1-2 baris terkirim) supaya firewall TIDAK
+# di-reset dengan daftar range tidak lengkap -> anti partial-outage.
+if [ "$CF_V4_COUNT" -lt 7 ]; then
+  echo "GAGAL/INVALID IPv4 Cloudflare (cuma $CF_V4_COUNT range, minimal 7), abort (firewall TIDAK diubah)"; exit 1
 fi
-if ! echo "$CF_V6" | grep -qE '^[0-9a-fA-F:]+/[0-9]{1,3}$'; then
-  echo "GAGAL/INVALID ambil IPv6 Cloudflare, abort (firewall TIDAK diubah)"; exit 1
+if [ "$CF_V6_COUNT" -lt 3 ]; then
+  echo "GAGAL/INVALID IPv6 Cloudflare (cuma $CF_V6_COUNT range, minimal 3), abort (firewall TIDAK diubah)"; exit 1
 fi
 echo "v4: $(echo "$CF_V4" | wc -l) ranges, v6: $(echo "$CF_V6" | wc -l) ranges"
 
