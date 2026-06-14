@@ -31,8 +31,8 @@ export function middleware(req: NextRequest) {
   requestHeaders.set("Content-Security-Policy", policy);
 
   const res = NextResponse.next({ request: { headers: requestHeaders } });
-  // Response memakai Report-Only agar browser melaporkan tanpa memblokir.
-  res.headers.set("Content-Security-Policy-Report-Only", policy);
+  // Policy di-enforce setelah triase Report-Only bersih di seluruh route.
+  res.headers.set("Content-Security-Policy", policy);
   return res;
 }
 

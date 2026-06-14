@@ -32,7 +32,7 @@ export function middleware(req: NextRequest) {
     requestHeaders.set("x-nonce", nonce);
     requestHeaders.set("Content-Security-Policy", policy);
     const res = NextResponse.next({ request: { headers: requestHeaders } });
-    res.headers.set("Content-Security-Policy-Report-Only", policy);
+    res.headers.set("Content-Security-Policy", policy);
     return res;
   };
 
@@ -63,7 +63,7 @@ export function middleware(req: NextRequest) {
     const loginUrl = new URL("/login", req.url);
     loginUrl.searchParams.set("from", pathname);
     const redirect = NextResponse.redirect(loginUrl);
-    redirect.headers.set("Content-Security-Policy-Report-Only", policy);
+    redirect.headers.set("Content-Security-Policy", policy);
     return redirect;
   }
   return withCsp();
