@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+// Render dinamis wajib agar middleware bisa menyuntik nonce CSP per-request ke
+// script yang dirender Next.js. Tanpa ini halaman tersaji statis tanpa nonce.
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: {
     default: "Dashboard - TamsHub ClaudProx",
