@@ -1,8 +1,11 @@
 /**
- * Setup DNS Cloudflare untuk 4 subdomain ClaudProx ke VPS 168.144.107.144.
+ * Setup DNS Cloudflare untuk subdomain ClaudProx ke origin VPS (IP via ENV VPS_ORIGIN_IP).
  *
- * Idempoten: cek dulu, baru create/update. Subdomain api.claudprox pakai
- * proxied=false (DNS-only) untuk hindari Cloudflare proxy memutus stream SSE.
+ * Idempoten: cek dulu, baru create/update. Semua subdomain 1-level (mis.
+ * api-claudprox) memakai proxied=true supaya IP origin tersembunyi di balik
+ * Cloudflare (anti-DDoS) dan tetap ter-cover Universal SSL *.tams.codes.
+ *
+ * IP origin dibaca dari ENV VPS_ORIGIN_IP (jangan hardcode di source).
  *
  * Pemakaian:
  *   pnpm dlx tsx scripts/cloudflare-dns.ts
@@ -10,7 +13,7 @@
 
 import "dotenv/config";
 
-const VPS_IP = "168.144.107.144";
+const VPS_IP = process.env.VPS_ORIGIN_IP ?? "";
 const ZONE_ID = process.env.CLOUDFLARE_ZONE_ID ?? "";
 const API_TOKEN = process.env.CLOUDFLARE_API_TOKEN ?? "";
 const API_BASE = "https://api.cloudflare.com/client/v4";
@@ -24,11 +27,12 @@ interface DnsRecordPlan {
 }
 
 const PLAN: DnsRecordPlan[] = [
+  // Semua proxied=true: IP origin tersembunyi di balik Cloudflare.
+  // Nama 1-level di bawah tams.codes agar ter-cover Universal SSL *.tams.codes.
   { name: "claudprox", proxied: true },
-  { name: "dashboard.claudprox", proxied: true },
-  { name: "admin.claudprox", proxied: true },
-  // SSE-sensitive: pakai DNS-only supaya Cloudflare tidak terminate stream.
-  { name: "api.claudprox", proxied: false },
+  { name: "dashboard-claudprox", proxied: true },
+  { name: "admin-claudprox", proxied: true },
+  { name: "api-claudprox", proxied: true },
 ];
 
 interface ApiResponse<T> {

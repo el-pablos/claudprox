@@ -264,7 +264,7 @@ Tool yang tidak mendukung custom base URL (Copilot resmi, Gemini CLI resmi) dita
 
 ## Deploy (VPS)
 
-Server target: `168.144.107.144`.
+Server target: `VPS (IP disembunyikan)`.
 
 ### Urutan deploy
 
