@@ -56,7 +56,7 @@ export default function QuickStartPage() {
         <Step n={1} title="Daftar sama beli paket">
           <p className="text-sm text-slate-300">
             Buka{" "}
-            <a className="text-ctos-accent hover:underline" href="https://dashboard-claudprox.tams.codes">
+            <a className="text-ctos-accent underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" href="https://dashboard-claudprox.tams.codes">
               dashboard
             </a>{" "}
             kamu, daftar, terus pilih paket. Setelah admin approve, saldo token sama API key langsung muncul.
@@ -81,7 +81,7 @@ export default function QuickStartPage() {
         </Step>
 
         <p className="text-sm text-slate-400">
-          Lanjut: <a href="/docs/endpoints" className="text-ctos-accent hover:underline">Endpoint</a> →
+          Lanjut: <a href="/docs/endpoints" className="text-ctos-accent underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Endpoint</a> →
         </p>
       </article>
       <Footer />
