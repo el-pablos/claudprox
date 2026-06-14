@@ -100,7 +100,7 @@ function SidebarContent({
               aria-current={active ? "page" : undefined}
               className={
                 active
-                  ? "flex items-center gap-3 rounded-lg bg-primary/15 px-3 py-2.5 text-sm font-medium text-primary shadow-elev-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  ? "flex items-center gap-3 rounded-lg bg-primary/15 px-3 py-2.5 text-sm font-medium text-foreground shadow-elev-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                   : "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-foreground-muted transition-colors hover:bg-surface-hover hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               }
             >
@@ -257,7 +257,7 @@ function SidebarBody({
               aria-current={active ? "page" : undefined}
               className={
                 active
-                  ? "flex items-center gap-3 rounded-lg bg-primary/15 px-3 py-3 text-sm font-medium text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  ? "flex items-center gap-3 rounded-lg bg-primary/15 px-3 py-3 text-sm font-medium text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                   : "flex items-center gap-3 rounded-lg px-3 py-3 text-sm text-foreground-muted transition-colors hover:bg-surface-hover hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               }
             >
