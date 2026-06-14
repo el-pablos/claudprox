@@ -39,3 +39,13 @@ ss-contoh/
 # semua markdown kecuali README
 *.md
 !README.md
+
+# QA artifacts & auth state (jangan publik)
+test-results/
+.auth/
+**/.auth/
+artifacts/
+.playwright-mcp/
+*.png
+auth.json
+storage-state.json

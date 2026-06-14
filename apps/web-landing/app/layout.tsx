@@ -40,6 +40,10 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.svg",
   },
+  other: {
+    "build-sha": process.env.NEXT_PUBLIC_BUILD_SHA ?? "dev",
+    "build-time": process.env.NEXT_PUBLIC_BUILD_TIME ?? "",
+  },
 };
 
 export default function RootLayout({
