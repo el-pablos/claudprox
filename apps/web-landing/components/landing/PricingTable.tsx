@@ -33,7 +33,7 @@ export function PricingTable({ withCta = true }: { withCta?: boolean }) {
                 key={plan.name}
                 className={
                   featured
-                    ? "relative border-ctos-accent shadow-[0_0_30px_rgba(0,229,255,0.15)]"
+                    ? "relative border-primary shadow-glow ring-1 ring-secondary/40"
                     : ""
                 }
               >
