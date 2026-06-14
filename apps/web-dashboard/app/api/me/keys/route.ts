@@ -7,7 +7,7 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 const APIKEY_HASH_SECRET = process.env.APIKEY_HASH_SECRET;
-const GATEWAY_BASE_URL = process.env.GATEWAY_BASE_URL ?? "https://api.claudprox.tams.codes";
+const GATEWAY_BASE_URL = process.env.GATEWAY_BASE_URL ?? "https://api-claudprox.tams.codes";
 
 function ensureSecret(): string {
   if (APIKEY_HASH_SECRET === undefined || APIKEY_HASH_SECRET === "") {

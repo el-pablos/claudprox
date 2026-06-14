@@ -77,7 +77,7 @@ export default function KeysPage() {
       <section className="rounded-lg border border-ctos-border bg-ctos-panel p-6">
         <h2 className="text-lg font-semibold text-slate-100">Base URL gateway</h2>
         <code className="mt-3 block rounded-md border border-ctos-border bg-ctos-bg px-4 py-3 font-mono text-sm text-ctos-accent">
-          {data?.baseUrl ?? "https://api.claudprox.tams.codes"}
+          {data?.baseUrl ?? "https://api-claudprox.tams.codes"}
         </code>
         <p className="mt-2 text-xs text-slate-500">
           Pasang base URL ini di env variable CLI tool kamu (lihat <a href="https://claudprox.tams.codes/#cli" className="text-ctos-accent hover:underline">daftar 18 CLI tool</a>).

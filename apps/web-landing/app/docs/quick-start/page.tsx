@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Mulai pakai TamsHub ClaudProx dalam 60 detik.",
 };
 
-const CURL_OPENAI = `curl -X POST https://api.claudprox.tams.codes/v1/chat/completions \\
+const CURL_OPENAI = `curl -X POST https://api-claudprox.tams.codes/v1/chat/completions \\
   -H "Authorization: Bearer <API_KEY_KAMU>" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -17,7 +17,7 @@ const CURL_OPENAI = `curl -X POST https://api.claudprox.tams.codes/v1/chat/compl
     "stream": false
   }'`;
 
-const CURL_ANTHROPIC = `curl -X POST https://api.claudprox.tams.codes/v1/messages \\
+const CURL_ANTHROPIC = `curl -X POST https://api-claudprox.tams.codes/v1/messages \\
   -H "x-api-key: <API_KEY_KAMU>" \\
   -H "anthropic-version: 2023-06-01" \\
   -H "Content-Type: application/json" \\
@@ -31,7 +31,7 @@ const NODE_SDK = `import OpenAI from "openai";
 
 const client = new OpenAI({
   apiKey: process.env.CLAUDPROX_API_KEY,
-  baseURL: "https://api.claudprox.tams.codes/v1",
+  baseURL: "https://api-claudprox.tams.codes/v1",
 });
 
 const res = await client.chat.completions.create({
@@ -56,7 +56,7 @@ export default function QuickStartPage() {
         <Step n={1} title="Daftar sama beli paket">
           <p className="text-sm text-slate-300">
             Buka{" "}
-            <a className="text-ctos-accent hover:underline" href="https://dashboard.claudprox.tams.codes">
+            <a className="text-ctos-accent hover:underline" href="https://dashboard-claudprox.tams.codes">
               dashboard
             </a>{" "}
             kamu, daftar, terus pilih paket. Setelah admin approve, saldo token sama API key langsung muncul.
@@ -65,7 +65,7 @@ export default function QuickStartPage() {
 
         <Step n={2} title="Catat Base URL sama API key">
           <p className="text-sm text-slate-300">Base URL gateway:</p>
-          <CodeBlock code="https://api.claudprox.tams.codes" />
+          <CodeBlock code="https://api-claudprox.tams.codes" />
           <p className="mt-3 text-sm text-slate-300">
             API key format <span className="font-mono text-ctos-accent">cpx_live_...</span>. Tampil sekali waktu generate; simpan baik-baik.
           </p>

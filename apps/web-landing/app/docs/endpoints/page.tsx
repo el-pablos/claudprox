@@ -23,7 +23,7 @@ export default function EndpointsPage() {
 
         <Endpoint method="GET" path="/v1/models" auth>
           <p>Daftar model whitelist (52 model). ID model versi user, tanpa prefix kr/.</p>
-          <CodeBlock code={`curl https://api.claudprox.tams.codes/v1/models \\
+          <CodeBlock code={`curl https://api-claudprox.tams.codes/v1/models \\
   -H "Authorization: Bearer <API_KEY_KAMU>"`} />
         </Endpoint>
 

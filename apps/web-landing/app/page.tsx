@@ -32,7 +32,7 @@ function TopNav() {
           <a href="/pricing" className="hover:text-ctos-accent">Harga</a>
           <a href="/docs" className="hover:text-ctos-accent">Docs</a>
         </div>
-        <LinkButton href="https://dashboard.claudprox.tams.codes" size="sm">
+        <LinkButton href="https://dashboard-claudprox.tams.codes" size="sm">
           Masuk
         </LinkButton>
       </div>

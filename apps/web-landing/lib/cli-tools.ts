@@ -32,7 +32,7 @@ export interface CliTool {
   notes?: string;
 }
 
-const BASE_URL = "https://api.claudprox.tams.codes";
+const BASE_URL = "https://api-claudprox.tams.codes";
 const API_KEY_PLACEHOLDER = "<API_KEY_KAMU>";
 
 export const CLI_TOOLS: CliTool[] = [

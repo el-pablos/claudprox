@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Cara konsumsi response streaming dari TamsHub ClaudProx.",
 };
 
-const STREAM_CURL = `curl -N -X POST https://api.claudprox.tams.codes/v1/chat/completions \\
+const STREAM_CURL = `curl -N -X POST https://api-claudprox.tams.codes/v1/chat/completions \\
   -H "Authorization: Bearer <API_KEY_KAMU>" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -21,7 +21,7 @@ const STREAM_NODE = `import OpenAI from "openai";
 
 const client = new OpenAI({
   apiKey: process.env.CLAUDPROX_API_KEY,
-  baseURL: "https://api.claudprox.tams.codes/v1",
+  baseURL: "https://api-claudprox.tams.codes/v1",
 });
 
 const stream = await client.chat.completions.create({

@@ -3,7 +3,7 @@ import { LinkButton } from "../ui/Button";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/Card";
 
 const DASHBOARD_BUY_URL =
-  process.env.DASHBOARD_USER_URL ?? "https://dashboard.claudprox.tams.codes";
+  process.env.DASHBOARD_USER_URL ?? "https://dashboard-claudprox.tams.codes";
 
 function formatRupiah(idr: number): string {
   return `Rp${idr.toLocaleString("id-ID")}`;
