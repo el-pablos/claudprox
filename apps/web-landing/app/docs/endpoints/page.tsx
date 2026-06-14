@@ -14,7 +14,7 @@ export default function EndpointsPage() {
       <DocsHeader />
       <article className="mx-auto max-w-3xl space-y-8 px-6 py-16">
         <header>
-          <a href="/docs" className="text-xs text-slate-500 hover:text-ctos-accent">← Docs</a>
+          <a href="/docs" className="text-xs text-foreground-muted hover:text-ctos-accent">← Docs</a>
           <h1 className="mt-3 text-3xl font-bold text-slate-50">Endpoint</h1>
           <p className="mt-2 text-slate-400">
             Empat endpoint utama. Tiga di antaranya butuh API key, satu (health) public.
@@ -81,7 +81,7 @@ function Endpoint({
       <div className="mb-3 flex items-center gap-3">
         <span className={`font-mono text-xs ${tone}`}>{method}</span>
         <code className="font-mono text-sm text-slate-100">{path}</code>
-        <span className="ml-auto text-[10px] uppercase tracking-wider text-slate-500">
+        <span className="ml-auto text-[10px] uppercase tracking-wider text-foreground-muted">
           {auth ? "Butuh API key" : "Public"}
         </span>
       </div>

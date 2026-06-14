@@ -71,7 +71,7 @@ export default function ErrorCodesPage() {
       <DocsHeader />
       <article className="mx-auto max-w-4xl space-y-6 px-6 py-16">
         <header>
-          <a href="/docs" className="text-xs text-slate-500 hover:text-ctos-accent">← Docs</a>
+          <a href="/docs" className="text-xs text-foreground-muted hover:text-ctos-accent">← Docs</a>
           <h1 className="mt-3 text-3xl font-bold text-slate-50">Kode Galat</h1>
           <p className="mt-2 text-slate-400">
             Format error konsisten. Body JSON selalu punya field{" "}

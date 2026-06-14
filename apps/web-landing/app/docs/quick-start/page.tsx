@@ -46,7 +46,7 @@ export default function QuickStartPage() {
       <DocsHeader />
       <article className="mx-auto max-w-3xl space-y-8 px-6 py-16">
         <header>
-          <a href="/docs" className="text-xs text-slate-500 hover:text-ctos-accent">← Docs</a>
+          <a href="/docs" className="text-xs text-foreground-muted hover:text-ctos-accent">← Docs</a>
           <h1 className="mt-3 text-3xl font-bold text-slate-50">Quick Start</h1>
           <p className="mt-2 text-slate-400">
             Tiga langkah supaya request pertama kamu jalan.
@@ -72,11 +72,11 @@ export default function QuickStartPage() {
         </Step>
 
         <Step n={3} title="Panggil endpoint">
-          <h3 className="mb-2 text-xs uppercase tracking-wider text-slate-500">curl OpenAI compatible</h3>
+          <h3 className="mb-2 text-xs uppercase tracking-wider text-foreground-muted">curl OpenAI compatible</h3>
           <CodeBlock code={CURL_OPENAI} />
-          <h3 className="mb-2 mt-6 text-xs uppercase tracking-wider text-slate-500">curl Anthropic compatible</h3>
+          <h3 className="mb-2 mt-6 text-xs uppercase tracking-wider text-foreground-muted">curl Anthropic compatible</h3>
           <CodeBlock code={CURL_ANTHROPIC} />
-          <h3 className="mb-2 mt-6 text-xs uppercase tracking-wider text-slate-500">Node SDK (openai)</h3>
+          <h3 className="mb-2 mt-6 text-xs uppercase tracking-wider text-foreground-muted">Node SDK (openai)</h3>
           <CodeBlock code={NODE_SDK} />
         </Step>
 

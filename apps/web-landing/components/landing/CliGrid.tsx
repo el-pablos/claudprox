@@ -87,7 +87,7 @@ function ToolDetail({ tool }: { tool: CliTool }) {
 
       {tool.envVars.length ? (
         <div>
-          <h3 className="mb-2 text-xs uppercase tracking-wider text-slate-500">Env var</h3>
+          <h3 className="mb-2 text-xs uppercase tracking-wider text-foreground-muted">Env var</h3>
           <ul className="space-y-1 text-xs font-mono text-slate-400">
             {tool.envVars.map((v) => (
               <li key={v.name}>
@@ -95,7 +95,7 @@ function ToolDetail({ tool }: { tool: CliTool }) {
                 <span className="text-slate-600"> = </span>
                 <span>{v.example}</span>
                 {v.description ? (
-                  <div className="ml-3 mt-0.5 text-[10px] text-slate-500">{v.description}</div>
+                  <div className="ml-3 mt-0.5 text-[10px] text-foreground-muted">{v.description}</div>
                 ) : null}
               </li>
             ))}
@@ -104,7 +104,7 @@ function ToolDetail({ tool }: { tool: CliTool }) {
       ) : null}
 
       <div>
-        <h3 className="mb-2 text-xs uppercase tracking-wider text-slate-500">Contoh perintah</h3>
+        <h3 className="mb-2 text-xs uppercase tracking-wider text-foreground-muted">Contoh perintah</h3>
         <CodeBlock code={tool.example} />
       </div>
 

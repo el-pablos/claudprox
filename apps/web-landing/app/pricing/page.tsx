@@ -13,7 +13,7 @@ export default function PricingPage() {
     <main>
       <header className="border-b border-ctos-border bg-ctos-bg">
         <div className="mx-auto max-w-6xl px-6 py-12">
-          <a href="/" className="text-xs text-slate-500 hover:text-ctos-accent">
+          <a href="/" className="text-xs text-foreground-muted hover:text-ctos-accent">
             ← Beranda
           </a>
           <h1 className="mt-4 text-4xl font-bold text-slate-50">Paket harga</h1>
