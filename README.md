@@ -12,8 +12,8 @@ TamsHub ClaudProx adalah produk SaaS yang terdiri dari empat layanan utama:
 
 - **Gateway reseller (Fastify)** yang menembak ke proxy utama, memberi metering token, rate limit, transformasi model id, dan otentikasi API key.
 - **Landing + Docs** (`claudprox.tams.codes`) untuk marketing, dokumentasi, dan panduan integrasi 18 CLI tool.
-- **Dashboard user** (`dashboard.claudprox.tams.codes`) untuk melihat saldo token, hari tersisa, statistik request, API key, dan beli/refill paket.
-- **Dashboard admin** (`admin.claudprox.tams.codes`) untuk memantau seluruh user, request, token, pembayaran, dan verifikasi pembayaran manual.
+- **Dashboard user** (`dashboard-claudprox.tams.codes`) untuk melihat saldo token, hari tersisa, statistik request, API key, dan beli/refill paket.
+- **Dashboard admin** (`admin-claudprox.tams.codes`) untuk memantau seluruh user, request, token, pembayaran, dan verifikasi pembayaran manual.
 
 Target pengguna: developer yang ingin akses model Claude premium lewat CLI tool atau SDK existing (OpenAI/Anthropic-compatible) dengan harga terjangkau, tanpa perlu langganan resmi per-vendor.
 
@@ -177,21 +177,21 @@ Semua secret HANYA di `.env` (gitignored). Tidak pernah di-commit, tidak pernah 
 
 ## Endpoint Gateway
 
-Base URL produksi: `https://api.claudprox.tams.codes`
+Base URL produksi: `https://api-claudprox.tams.codes`
 
 ### `GET /v1/models`
 
 Daftar 52 model whitelist (id versi user, tanpa prefix `kr/`).
 
 ```bash
-curl https://api.claudprox.tams.codes/v1/models \
+curl https://api-claudprox.tams.codes/v1/models \
   -H "Authorization: Bearer <API_KEY_KAMU>"
 ```
 
 ### `POST /v1/chat/completions` (OpenAI-compatible)
 
 ```bash
-curl -X POST https://api.claudprox.tams.codes/v1/chat/completions \
+curl -X POST https://api-claudprox.tams.codes/v1/chat/completions \
   -H "Authorization: Bearer <API_KEY_KAMU>" \
   -H "Content-Type: application/json" \
   -d '{
@@ -204,7 +204,7 @@ curl -X POST https://api.claudprox.tams.codes/v1/chat/completions \
 ### `POST /v1/messages` (Anthropic-compatible)
 
 ```bash
-curl -X POST https://api.claudprox.tams.codes/v1/messages \
+curl -X POST https://api-claudprox.tams.codes/v1/messages \
   -H "x-api-key: <API_KEY_KAMU>" \
   -H "anthropic-version: 2023-06-01" \
   -H "Content-Type: application/json" \
