@@ -11,7 +11,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs uppercase tracking-wider text-slate-500">Produk</h4>
+            <h4 className="text-xs uppercase tracking-wider text-foreground-muted">Produk</h4>
             <ul className="mt-3 space-y-2 text-sm text-slate-300">
               <li>
                 <a href="/" className="hover:text-ctos-accent">
@@ -37,19 +37,19 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xs uppercase tracking-wider text-slate-500">Pembayaran</h4>
+            <h4 className="text-xs uppercase tracking-wider text-foreground-muted">Pembayaran</h4>
             <ul className="mt-3 space-y-2 text-sm text-slate-300">
               <li>QRIS</li>
               <li>BCA</li>
               <li>Virtual Account</li>
-              <li className="text-xs text-slate-500">
+              <li className="text-xs text-foreground-muted">
                 Konfirmasi manual via Telegram admin.
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-xs uppercase tracking-wider text-slate-500">Kontak</h4>
+            <h4 className="text-xs uppercase tracking-wider text-foreground-muted">Kontak</h4>
             <ul className="mt-3 space-y-2 text-sm text-slate-300">
               <li>
                 Telegram:{" "}
@@ -86,7 +86,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-ctos-border pt-6 text-xs text-slate-500 sm:flex-row">
+        <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-ctos-border pt-6 text-xs text-foreground-muted sm:flex-row">
           <span>© 2026 TamsHub ClaudProx. All rights reserved.</span>
           <span className="font-mono">v1.0 — built with Next.js 14 sama Fastify</span>
         </div>

@@ -90,11 +90,11 @@ export function PricingTable({ withCta = true }: { withCta?: boolean }) {
             );
           })}
         </div>
-        <p className="mt-8 text-center text-xs text-slate-500">
+        <p className="mt-8 text-center text-xs text-foreground-muted">
           Pembayaran lewat QRIS, BCA, atau Virtual Account. Konfirmasi via Telegram{" "}
           <a
             href="https://t.me/ImTamaa"
-            className="text-ctos-accent hover:underline"
+            className="text-primary underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             target="_blank"
             rel="noreferrer"
           >
