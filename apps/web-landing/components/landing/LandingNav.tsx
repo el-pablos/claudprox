@@ -132,7 +132,7 @@ function MobileDrawer({ open, onClose }: { open: boolean; onClose: () => void })
             type="button"
             onClick={onClose}
             aria-label="Tutup menu navigasi"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-ctos-border text-slate-300 hover:border-ctos-accent hover:text-ctos-accent"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-ctos-border text-slate-300 hover:border-ctos-accent hover:text-ctos-accent"
           >
             <CloseIcon />
           </button>
