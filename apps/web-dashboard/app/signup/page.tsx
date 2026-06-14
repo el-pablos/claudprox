@@ -42,8 +42,8 @@ export default function SignupPage() {
         <div className="w-full max-w-md rounded-xl border border-ctos-border bg-ctos-panel p-8 shadow-2xl">
           <div className="mb-6 text-center">
             <div className="font-mono text-sm text-ctos-accent">ClaudProx Dashboard</div>
-            <h1 className="ctos-glow mt-2 text-2xl font-bold text-slate-50">Daftar Akun</h1>
-            <p className="mt-1 text-xs text-slate-400">Buat akun untuk mulai pakai gateway.</p>
+            <h1 className="ctos-glow mt-2 text-2xl font-bold text-foreground">Daftar Akun</h1>
+            <p className="mt-1 text-xs text-foreground-muted">Buat akun untuk mulai pakai gateway.</p>
           </div>
           <form onSubmit={onSubmit} className="space-y-4">
             <Field label="Nama" type="text" value={name} onChange={setName} required autoComplete="name" />
@@ -70,7 +70,7 @@ export default function SignupPage() {
               {loading ? "Mendaftar..." : "Daftar"}
             </button>
           </form>
-          <p className="mt-6 text-center text-xs text-slate-500">
+          <p className="mt-6 text-center text-xs text-foreground-muted">
             Sudah punya akun?{" "}
             <a href="/login" className="text-ctos-accent hover:underline">
               Masuk di sini
@@ -101,16 +101,16 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mb-1 block text-xs uppercase tracking-wider text-slate-400">{label}</span>
+      <span className="mb-1 block text-xs uppercase tracking-wider text-foreground-muted">{label}</span>
       <input
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         required={required}
         autoComplete={autoComplete}
-        className="w-full rounded-md border border-ctos-border bg-ctos-bg px-3 py-2 text-sm text-slate-100 outline-none focus:border-ctos-accent"
+        className="w-full rounded-md border border-ctos-border bg-ctos-bg px-3 py-2 text-sm text-foreground outline-none focus:border-ctos-accent"
       />
-      {hint ? <span className="mt-1 block text-[10px] text-slate-500">{hint}</span> : null}
+      {hint ? <span className="mt-1 block text-[10px] text-foreground-muted">{hint}</span> : null}
     </label>
   );
 }

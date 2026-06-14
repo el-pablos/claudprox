@@ -26,9 +26,9 @@ export default async function UserDetailPage({
   return (
     <div className="space-y-8">
       <header>
-        <a href="/users" className="text-xs text-slate-500 hover:text-ctos-accent">← Daftar user</a>
-        <h1 className="mt-2 text-3xl font-bold text-slate-50">{user.email}</h1>
-        <p className="mt-1 text-sm text-slate-400">
+        <a href="/users" className="text-xs text-foreground-muted hover:text-ctos-accent">← Daftar user</a>
+        <h1 className="mt-2 text-3xl font-bold text-foreground">{user.email}</h1>
+        <p className="mt-1 text-sm text-foreground-muted">
           Role: <span className="font-mono">{user.role}</span> · Dibuat:{" "}
           {user.createdAt.toLocaleString("id-ID")}
         </p>
@@ -89,7 +89,7 @@ export default async function UserDetailPage({
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section>
-      <h2 className="mb-3 text-lg font-semibold text-slate-100">{title}</h2>
+      <h2 className="mb-3 text-lg font-semibold text-foreground">{title}</h2>
       {children}
     </section>
   );
@@ -98,7 +98,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 function Table({ headers, rows }: { headers: string[]; rows: string[][] }) {
   if (rows.length === 0) {
     return (
-      <p className="rounded-md border border-ctos-border bg-ctos-panel p-4 text-sm text-slate-400">
+      <p className="rounded-md border border-ctos-border bg-ctos-panel p-4 text-sm text-foreground-muted">
         Belum ada data.
       </p>
     );
@@ -106,7 +106,7 @@ function Table({ headers, rows }: { headers: string[]; rows: string[][] }) {
   return (
     <div className="overflow-x-auto rounded-lg border border-ctos-border">
       <table className="min-w-full divide-y divide-ctos-border text-sm">
-        <thead className="bg-ctos-panel/60 text-left text-xs uppercase tracking-wider text-slate-400">
+        <thead className="bg-ctos-panel/60 text-left text-xs uppercase tracking-wider text-foreground-muted">
           <tr>
             {headers.map((h) => (
               <th key={h} className="px-4 py-2">{h}</th>
@@ -117,7 +117,7 @@ function Table({ headers, rows }: { headers: string[]; rows: string[][] }) {
           {rows.map((row, i) => (
             <tr key={i}>
               {row.map((cell, j) => (
-                <td key={j} className="px-4 py-2 text-slate-300">
+                <td key={j} className="px-4 py-2 text-foreground-muted">
                   {cell}
                 </td>
               ))}

@@ -16,7 +16,7 @@ function LoginFallback() {
     <main className="relative min-h-screen overflow-hidden">
       <div className="absolute inset-0 ctos-grid opacity-40" aria-hidden />
       <div className="relative flex min-h-screen items-center justify-center px-6">
-        <div className="text-sm text-slate-500">Memuat...</div>
+        <div className="text-sm text-foreground-muted">Memuat...</div>
       </div>
     </main>
   );
@@ -62,8 +62,8 @@ function LoginInner() {
         <div className="w-full max-w-md rounded-xl border border-ctos-border bg-ctos-panel p-8 shadow-2xl">
           <div className="mb-6 text-center">
             <div className="font-mono text-sm text-ctos-accent">ClaudProx Admin</div>
-            <h1 className="ctos-glow mt-2 text-2xl font-bold text-slate-50">Masuk Admin</h1>
-            <p className="mt-1 text-xs text-slate-400">Akses terbatas. Hanya untuk akun ADMIN.</p>
+            <h1 className="ctos-glow mt-2 text-2xl font-bold text-foreground">Masuk Admin</h1>
+            <p className="mt-1 text-xs text-foreground-muted">Akses terbatas. Hanya untuk akun ADMIN.</p>
           </div>
           <form onSubmit={onSubmit} className="space-y-4">
             <Field
@@ -90,7 +90,7 @@ function LoginInner() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full rounded-md bg-ctos-accent px-4 py-2 text-sm font-semibold text-white transition hover:bg-ctos-accentDim disabled:opacity-50"
+              className="w-full rounded-md bg-ctos-accent px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:bg-ctos-accentDim disabled:opacity-50"
             >
               {loading ? "Masuk..." : "Masuk sebagai Admin"}
             </button>
@@ -118,14 +118,14 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mb-1 block text-xs uppercase tracking-wider text-slate-400">{label}</span>
+      <span className="mb-1 block text-xs uppercase tracking-wider text-foreground-muted">{label}</span>
       <input
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         required={required}
         autoComplete={autoComplete}
-        className="w-full rounded-md border border-ctos-border bg-ctos-bg px-3 py-2 text-sm text-slate-100 outline-none focus:border-ctos-accent"
+        className="w-full rounded-md border border-ctos-border bg-ctos-bg px-3 py-2 text-sm text-foreground outline-none focus:border-ctos-accent"
       />
     </label>
   );
