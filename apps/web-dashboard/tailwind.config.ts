@@ -1,62 +1,61 @@
 import type { Config } from "tailwindcss";
 
-// Design system TamsHub ClaudProx — Contrasting Vibrancy.
-// Palette inti: latar gelap #181818, teks #F7F7F7, aksen orange #FF5722,
-// purple #673AB7, dan yellow #FFEB3B untuk fokus/hover/highlight terkontrol.
-// Namespace `ctos` di-remap ke palette baru supaya komponen lama ikut berubah,
-// dan token semantik `brand` dipakai komponen struktural baru.
+// Design system TamsHub ClaudProx — Branded SaaS Neutral (Octet palette).
+// Light-first, tenang, enterprise. Sumber kebenaran enam warna Octet:
+//   #ebedf1 Bright Grey, #d4d8df Shy Blunt, #acadb1 Grey Timber Wolf,
+//   #706f70 Smoked Pearl, #353536 Jet Black, #080808 Reversed Grey.
+// Namespace lama `ctos` dan `brand` di-remap ke palet netral supaya komponen
+// existing ikut berubah tanpa putus.
 const config: Config = {
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        // Token semantik utama (dipakai komponen redesign).
-        background: "#181818",
-        "background-elevated": "#1f1f1f",
-        surface: "#1f1f1f",
-        "surface-hover": "#262626",
-        "surface-active": "#2e2e2e",
-        border: "#333333",
-        "border-strong": "#4d4d4d",
-        foreground: "#F7F7F7",
-        "foreground-muted": "#a1a1aa",
-        primary: "#FF5722",
-        "primary-foreground": "#181818",
-        secondary: "#673AB7",
-        "secondary-foreground": "#F7F7F7",
-        accent: "#FFEB3B",
-        "accent-foreground": "#181818",
-        "focus-ring": "#FFEB3B",
-        success: "#22c55e",
-        warning: "#f59e0b",
-        danger: "#ef4444",
-        info: "#673AB7",
-        overlay: "rgba(0,0,0,0.6)",
-        skeleton: "#262626",
-        // Namespace lama di-remap ke palette baru (back-compat instan).
+        background: "#e8eaef",
+        "background-elevated": "#ebedf1",
+        surface: "#ebedf1",
+        "surface-hover": "#d4d8df",
+        "surface-active": "#c8cbd1",
+        border: "#acadb1",
+        "border-strong": "#706f70",
+        foreground: "#080808",
+        "foreground-muted": "#5b5a5b",
+        primary: "#080808",
+        "primary-foreground": "#ebedf1",
+        secondary: "#353536",
+        "secondary-foreground": "#ebedf1",
+        accent: "#353536",
+        "accent-foreground": "#ebedf1",
+        "focus-ring": "#080808",
+        success: "#15803d",
+        warning: "#b45309",
+        danger: "#b91c1c",
+        info: "#353536",
+        overlay: "rgba(8,8,8,0.55)",
+        skeleton: "#d4d8df",
         ctos: {
-          bg: "#181818",
-          panel: "#1f1f1f",
-          border: "#333333",
-          accent: "#FF5722",
-          accentDim: "#e64a19",
-          warn: "#f59e0b",
+          bg: "#ebedf1",
+          panel: "#ebedf1",
+          border: "#acadb1",
+          accent: "#080808",
+          accentDim: "#353536",
+          warn: "#b45309",
         },
         brand: {
-          orange: "#FF5722",
-          "orange-dim": "#e64a19",
-          purple: "#673AB7",
-          "purple-dim": "#5e35b1",
-          yellow: "#FFEB3B",
+          orange: "#080808",
+          "orange-dim": "#353536",
+          purple: "#353536",
+          "purple-dim": "#706f70",
+          yellow: "#353536",
         },
       },
       fontFamily: {
         mono: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
       boxShadow: {
-        "elev-1": "0 1px 2px rgba(0,0,0,0.4)",
-        "elev-2": "0 4px 16px rgba(0,0,0,0.5)",
-        glow: "0 0 24px rgba(255,87,34,0.25)",
+        "elev-1": "0 1px 2px rgba(8,8,8,0.08)",
+        "elev-2": "0 4px 16px rgba(8,8,8,0.12)",
+        glow: "0 0 0 1px rgba(8,8,8,0.06)",
       },
     },
   },
