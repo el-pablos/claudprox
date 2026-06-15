@@ -5,6 +5,7 @@ import { Footer } from "../../../components/landing/Footer";
 export const metadata: Metadata = {
   title: "Kode Galat",
   description: "Kode galat dari gateway TamsHub ClaudProx dan cara handle.",
+  alternates: { canonical: "/docs/error-codes" },
 };
 
 interface ErrorEntry {

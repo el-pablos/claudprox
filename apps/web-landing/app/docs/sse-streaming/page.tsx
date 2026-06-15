@@ -6,6 +6,7 @@ import { CodeBlock } from "../../../components/ui/Dialog";
 export const metadata: Metadata = {
   title: "SSE Streaming",
   description: "Cara konsumsi response streaming dari TamsHub ClaudProx.",
+  alternates: { canonical: "/docs/sse-streaming" },
 };
 
 const STREAM_CURL = `curl -N -X POST https://api-claudprox.tams.codes/v1/chat/completions \\

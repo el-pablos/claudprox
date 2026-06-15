@@ -6,6 +6,7 @@ import { CodeBlock } from "../../../components/ui/Dialog";
 export const metadata: Metadata = {
   title: "Autentikasi",
   description: "Cara pakai API key di TamsHub ClaudProx.",
+  alternates: { canonical: "/docs/auth" },
 };
 
 export default function AuthPage() {

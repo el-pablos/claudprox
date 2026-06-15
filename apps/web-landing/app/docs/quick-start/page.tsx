@@ -6,6 +6,7 @@ import { CodeBlock } from "../../../components/ui/Dialog";
 export const metadata: Metadata = {
   title: "Quick Start",
   description: "Mulai pakai TamsHub ClaudProx dalam 60 detik.",
+  alternates: { canonical: "/docs/quick-start" },
 };
 
 const CURL_OPENAI = `curl -X POST https://api-claudprox.tams.codes/v1/chat/completions \\

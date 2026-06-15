@@ -6,6 +6,7 @@ import { Footer } from "../../../components/landing/Footer";
 export const metadata: Metadata = {
   title: "Model yang Didukung",
   description: "Daftar 52 model whitelist TamsHub ClaudProx.",
+  alternates: { canonical: "/docs/models" },
 };
 
 export default function ModelsPage() {

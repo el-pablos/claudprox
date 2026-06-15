@@ -9,6 +9,9 @@ const APP_URL = process.env.APP_BASE_URL ?? "https://claudprox.tams.codes";
 
 export const metadata: Metadata = {
   metadataBase: new URL(APP_URL),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "TamsHub - ClaudProx | Akses Semua Model Claude Murah",
     template: "%s | TamsHub ClaudProx",

@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Paket Harga",
   description:
     "Pilih paket TamsHub ClaudProx: Starter, Pro, atau Ultra. Token plus durasi, refill mulus, API key tetap.",
+  alternates: { canonical: "/pricing" },
 };
 
 export default function PricingPage() {

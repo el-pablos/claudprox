@@ -5,6 +5,7 @@ import { DocsHeader } from "../../components/docs/DocsHeader";
 export const metadata: Metadata = {
   title: "Dokumentasi",
   description: "Dokumentasi gateway TamsHub ClaudProx — quick start, endpoint, autentikasi, model, SSE, kode galat.",
+  alternates: { canonical: "/docs" },
 };
 
 interface DocSection {

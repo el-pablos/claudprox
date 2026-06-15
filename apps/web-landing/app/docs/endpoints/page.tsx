@@ -6,6 +6,7 @@ import { CodeBlock } from "../../../components/ui/Dialog";
 export const metadata: Metadata = {
   title: "Endpoint",
   description: "Daftar endpoint gateway TamsHub ClaudProx.",
+  alternates: { canonical: "/docs/endpoints" },
 };
 
 export default function EndpointsPage() {
