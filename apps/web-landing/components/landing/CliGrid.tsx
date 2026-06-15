@@ -12,10 +12,10 @@ export function CliGrid() {
     <section id="cli" className="border-b border-ctos-border bg-ctos-bg/40">
       <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-slate-50 sm:text-4xl">
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
             18 CLI tool siap konek
           </h2>
-          <p className="mt-3 text-slate-400">
+          <p className="mt-3 text-foreground-muted">
             Klik tiap kartu untuk lihat env var nyata dan contoh perintah lengkap.
           </p>
         </div>
@@ -72,7 +72,7 @@ function Tag({
       ? "border-ctos-accent/40 text-ctos-accent"
       : tone === "warn"
         ? "border-ctos-warn/40 text-ctos-warn"
-        : "border-ctos-border text-slate-400";
+        : "border-ctos-border text-foreground-muted";
   return (
     <span className={`rounded border px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider ${cls}`}>
       {children}
@@ -82,17 +82,17 @@ function Tag({
 
 function ToolDetail({ tool }: { tool: CliTool }) {
   return (
-    <div className="space-y-4 text-sm text-slate-300">
+    <div className="space-y-4 text-sm text-foreground-muted">
       <p>{tool.summary}</p>
 
       {tool.envVars.length ? (
         <div>
           <h3 className="mb-2 text-xs uppercase tracking-wider text-foreground-muted">Env var</h3>
-          <ul className="space-y-1 text-xs font-mono text-slate-400">
+          <ul className="space-y-1 text-xs font-mono text-foreground-muted">
             {tool.envVars.map((v) => (
               <li key={v.name}>
                 <span className="text-ctos-accent">{v.name}</span>
-                <span className="text-slate-600"> = </span>
+                <span className="text-foreground-muted"> = </span>
                 <span>{v.example}</span>
                 {v.description ? (
                   <div className="ml-3 mt-0.5 text-[10px] text-foreground-muted">{v.description}</div>

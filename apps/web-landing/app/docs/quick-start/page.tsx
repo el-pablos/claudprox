@@ -47,14 +47,14 @@ export default function QuickStartPage() {
       <article className="mx-auto max-w-3xl space-y-8 px-6 py-16">
         <header>
           <a href="/docs" className="text-xs text-foreground-muted hover:text-ctos-accent">← Docs</a>
-          <h1 className="mt-3 text-3xl font-bold text-slate-50">Quick Start</h1>
-          <p className="mt-2 text-slate-400">
+          <h1 className="mt-3 text-3xl font-bold text-foreground">Quick Start</h1>
+          <p className="mt-2 text-foreground-muted">
             Tiga langkah supaya request pertama kamu jalan.
           </p>
         </header>
 
         <Step n={1} title="Daftar sama beli paket">
-          <p className="text-sm text-slate-300">
+          <p className="text-sm text-foreground-muted">
             Buka{" "}
             <a className="text-ctos-accent underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent" href="https://dashboard-claudprox.tams.codes">
               dashboard
@@ -64,9 +64,9 @@ export default function QuickStartPage() {
         </Step>
 
         <Step n={2} title="Catat Base URL sama API key">
-          <p className="text-sm text-slate-300">Base URL gateway:</p>
+          <p className="text-sm text-foreground-muted">Base URL gateway:</p>
           <CodeBlock code="https://api-claudprox.tams.codes" />
-          <p className="mt-3 text-sm text-slate-300">
+          <p className="mt-3 text-sm text-foreground-muted">
             API key format <span className="font-mono text-ctos-accent">cpx_live_...</span>. Tampil sekali waktu generate; simpan baik-baik.
           </p>
         </Step>
@@ -80,7 +80,7 @@ export default function QuickStartPage() {
           <CodeBlock code={NODE_SDK} />
         </Step>
 
-        <p className="text-sm text-slate-400">
+        <p className="text-sm text-foreground-muted">
           Lanjut: <a href="/docs/endpoints" className="text-ctos-accent underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">Endpoint</a> →
         </p>
       </article>
@@ -92,7 +92,7 @@ export default function QuickStartPage() {
 function Step({ n, title, children }: { n: number; title: string; children: React.ReactNode }) {
   return (
     <section>
-      <h2 className="mb-3 flex items-center gap-3 text-xl font-semibold text-slate-100">
+      <h2 className="mb-3 flex items-center gap-3 text-xl font-semibold text-foreground">
         <span className="flex h-8 w-8 items-center justify-center rounded-full border border-ctos-accent text-sm text-ctos-accent">
           {n}
         </span>

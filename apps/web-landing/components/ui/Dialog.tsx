@@ -49,7 +49,7 @@ export function Dialog({ open, onClose, title, children, className }: DialogProp
           <button
             type="button"
             onClick={onClose}
-            className="rounded-md border border-ctos-border px-3 py-1 text-sm text-slate-300 hover:border-ctos-accent hover:text-ctos-accent"
+            className="rounded-md border border-ctos-border px-3 py-1 text-sm text-foreground-muted hover:border-ctos-accent hover:text-ctos-accent"
             aria-label="Tutup dialog"
           >
             Tutup
@@ -76,7 +76,7 @@ export function CodeBlock({ code }: { code: string }) {
 
   return (
     <div className="relative group">
-      <pre className="overflow-x-auto rounded-md border border-ctos-border bg-ctos-bg p-4 text-xs font-mono text-slate-200">
+      <pre className="overflow-x-auto rounded-md border border-ctos-border bg-ctos-bg p-4 text-xs font-mono text-foreground-muted">
         <code>{code}</code>
       </pre>
       <button

@@ -41,7 +41,7 @@ export function CardDescription({
 }: React.HTMLAttributes<HTMLParagraphElement>) {
   return (
     <p
-      className={clsx("text-sm text-slate-300/80", className)}
+      className={clsx("text-sm text-foreground-muted/80", className)}
       {...rest}
     />
   );

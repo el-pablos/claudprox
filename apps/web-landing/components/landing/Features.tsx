@@ -50,10 +50,10 @@ export function Features() {
     <section id="fitur" className="border-b border-ctos-border bg-ctos-bg/40">
       <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-slate-50 sm:text-4xl">
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
             Kenapa pakai ClaudProx
           </h2>
-          <p className="mt-3 max-w-2xl text-slate-400 mx-auto">
+          <p className="mt-3 max-w-2xl text-foreground-muted mx-auto">
             Gateway reseller fokus ke akses model premium dengan harga ramah, bukan janji marketing.
           </p>
         </div>

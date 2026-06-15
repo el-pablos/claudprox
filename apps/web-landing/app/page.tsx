@@ -24,10 +24,10 @@ function CallToAction() {
   return (
     <section className="border-b border-ctos-border bg-gradient-to-b from-ctos-bg to-ctos-panel/40">
       <div className="mx-auto max-w-4xl px-6 py-20 text-center">
-        <h2 className="text-3xl font-bold text-slate-50 sm:text-4xl">
+        <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
           Siap pakai semua model premium dengan harga ramah
         </h2>
-        <p className="mt-4 text-slate-400">
+        <p className="mt-4 text-foreground-muted">
           Pilih paket, transfer manual, admin approve. Saldo langsung masuk ke API key kamu.
         </p>
         <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">

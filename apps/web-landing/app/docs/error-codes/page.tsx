@@ -72,15 +72,15 @@ export default function ErrorCodesPage() {
       <article className="mx-auto max-w-4xl space-y-6 px-6 py-16">
         <header>
           <a href="/docs" className="text-xs text-foreground-muted hover:text-ctos-accent">← Docs</a>
-          <h1 className="mt-3 text-3xl font-bold text-slate-50">Kode Galat</h1>
-          <p className="mt-2 text-slate-400">
+          <h1 className="mt-3 text-3xl font-bold text-foreground">Kode Galat</h1>
+          <p className="mt-2 text-foreground-muted">
             Format error konsisten. Body JSON selalu punya field{" "}
             <span className="font-mono text-ctos-accent">{"error.type"}</span> dan{" "}
             <span className="font-mono text-ctos-accent">{"error.message"}</span>.
           </p>
         </header>
 
-        <pre className="overflow-x-auto rounded-md border border-ctos-border bg-ctos-bg p-4 text-xs font-mono text-slate-200">
+        <pre className="overflow-x-auto rounded-md border border-ctos-border bg-ctos-bg p-4 text-xs font-mono text-foreground-muted">
 {`{
   "error": {
     "type": "insufficient_tokens",
@@ -91,7 +91,7 @@ export default function ErrorCodesPage() {
 
         <div className="overflow-x-auto rounded-lg border border-ctos-border">
           <table className="min-w-full divide-y divide-ctos-border text-sm">
-            <thead className="bg-ctos-panel/60 text-left text-xs uppercase tracking-wider text-slate-400">
+            <thead className="bg-ctos-panel/60 text-left text-xs uppercase tracking-wider text-foreground-muted">
               <tr>
                 <th className="px-4 py-2">Kode</th>
                 <th className="px-4 py-2">Type</th>
@@ -103,9 +103,9 @@ export default function ErrorCodesPage() {
               {ERRORS.map((e) => (
                 <tr key={e.code}>
                   <td className="px-4 py-3 font-mono text-ctos-warn">{e.code}</td>
-                  <td className="px-4 py-3 font-mono text-slate-200">{e.type}</td>
-                  <td className="px-4 py-3 text-slate-300">{e.meaning}</td>
-                  <td className="px-4 py-3 text-slate-400">{e.fix}</td>
+                  <td className="px-4 py-3 font-mono text-foreground">{e.type}</td>
+                  <td className="px-4 py-3 text-foreground-muted">{e.meaning}</td>
+                  <td className="px-4 py-3 text-foreground-muted">{e.fix}</td>
                 </tr>
               ))}
             </tbody>

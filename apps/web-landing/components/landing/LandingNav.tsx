@@ -28,7 +28,7 @@ export function LandingNav() {
           ClaudProx
         </a>
 
-        <div className="hidden items-center gap-6 text-sm text-slate-300 sm:flex">
+        <div className="hidden items-center gap-6 text-sm text-foreground-muted sm:flex">
           {NAV_ITEMS.map((item) => (
             <a key={item.href} href={item.href} className="hover:text-ctos-accent">
               {item.label}
@@ -46,7 +46,7 @@ export function LandingNav() {
             aria-label="Buka menu navigasi"
             aria-expanded={open}
             aria-controls="landing-mobile-drawer"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-ctos-border text-slate-200 hover:border-ctos-accent hover:text-ctos-accent sm:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-ctos-border text-foreground-muted hover:border-ctos-accent hover:text-ctos-accent sm:hidden"
           >
             <HamburgerIcon />
           </button>
@@ -132,7 +132,7 @@ function MobileDrawer({ open, onClose }: { open: boolean; onClose: () => void })
             type="button"
             onClick={onClose}
             aria-label="Tutup menu navigasi"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-ctos-border text-slate-300 hover:border-ctos-accent hover:text-ctos-accent"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-ctos-border text-foreground-muted hover:border-ctos-accent hover:text-ctos-accent"
           >
             <CloseIcon />
           </button>
@@ -144,7 +144,7 @@ function MobileDrawer({ open, onClose }: { open: boolean; onClose: () => void })
               key={item.href}
               href={item.href}
               onClick={onClose}
-              className="rounded-md px-3 py-3 text-sm text-slate-300 hover:bg-ctos-bg hover:text-ctos-accent"
+              className="rounded-md px-3 py-3 text-sm text-foreground-muted hover:bg-ctos-bg hover:text-ctos-accent"
             >
               {item.label}
             </a>

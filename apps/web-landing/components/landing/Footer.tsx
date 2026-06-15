@@ -5,14 +5,14 @@ export function Footer() {
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
           <div>
             <div className="font-mono text-lg text-ctos-accent">TamsHub ClaudProx</div>
-            <p className="mt-2 text-sm text-slate-400">
+            <p className="mt-2 text-sm text-foreground-muted">
               Gateway reseller proxy AI dengan metering token, durasi, sama refill mulus.
             </p>
           </div>
 
           <div>
             <h4 className="text-xs uppercase tracking-wider text-foreground-muted">Produk</h4>
-            <ul className="mt-3 space-y-2 text-sm text-slate-300">
+            <ul className="mt-3 space-y-2 text-sm text-foreground-muted">
               <li>
                 <a href="/" className="hover:text-ctos-accent">
                   Beranda
@@ -38,7 +38,7 @@ export function Footer() {
 
           <div>
             <h4 className="text-xs uppercase tracking-wider text-foreground-muted">Pembayaran</h4>
-            <ul className="mt-3 space-y-2 text-sm text-slate-300">
+            <ul className="mt-3 space-y-2 text-sm text-foreground-muted">
               <li>QRIS</li>
               <li>BCA</li>
               <li>Virtual Account</li>
@@ -50,7 +50,7 @@ export function Footer() {
 
           <div>
             <h4 className="text-xs uppercase tracking-wider text-foreground-muted">Kontak</h4>
-            <ul className="mt-3 space-y-2 text-sm text-slate-300">
+            <ul className="mt-3 space-y-2 text-sm text-foreground-muted">
               <li>
                 Telegram:{" "}
                 <a

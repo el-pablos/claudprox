@@ -15,8 +15,8 @@ export default function EndpointsPage() {
       <article className="mx-auto max-w-3xl space-y-8 px-6 py-16">
         <header>
           <a href="/docs" className="text-xs text-foreground-muted hover:text-ctos-accent">← Docs</a>
-          <h1 className="mt-3 text-3xl font-bold text-slate-50">Endpoint</h1>
-          <p className="mt-2 text-slate-400">
+          <h1 className="mt-3 text-3xl font-bold text-foreground">Endpoint</h1>
+          <p className="mt-2 text-foreground-muted">
             Empat endpoint utama. Tiga di antaranya butuh API key, satu (health) public.
           </p>
         </header>
@@ -55,7 +55,7 @@ export default function EndpointsPage() {
           <p>Health check internal. Tidak butuh API key. Jangan dipakai sebagai endpoint produksi.</p>
         </Endpoint>
 
-        <p className="text-sm text-slate-400">
+        <p className="text-sm text-foreground-muted">
           Lanjut: <a href="/docs/auth" className="text-ctos-accent hover:underline">Autentikasi</a> →
         </p>
       </article>
@@ -80,12 +80,12 @@ function Endpoint({
     <section className="rounded-lg border border-ctos-border bg-ctos-panel p-6">
       <div className="mb-3 flex items-center gap-3">
         <span className={`font-mono text-xs ${tone}`}>{method}</span>
-        <code className="font-mono text-sm text-slate-100">{path}</code>
+        <code className="font-mono text-sm text-foreground">{path}</code>
         <span className="ml-auto text-[10px] uppercase tracking-wider text-foreground-muted">
           {auth ? "Butuh API key" : "Public"}
         </span>
       </div>
-      <div className="space-y-3 text-sm text-slate-300">{children}</div>
+      <div className="space-y-3 text-sm text-foreground-muted">{children}</div>
     </section>
   );
 }

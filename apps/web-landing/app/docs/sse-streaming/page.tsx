@@ -42,36 +42,36 @@ export default function SsePage() {
       <article className="mx-auto max-w-3xl space-y-6 px-6 py-16">
         <header>
           <a href="/docs" className="text-xs text-foreground-muted hover:text-ctos-accent">← Docs</a>
-          <h1 className="mt-3 text-3xl font-bold text-slate-50">SSE Streaming</h1>
-          <p className="mt-2 text-slate-400">
+          <h1 className="mt-3 text-3xl font-bold text-foreground">SSE Streaming</h1>
+          <p className="mt-2 text-foreground-muted">
             Pakai <span className="font-mono">stream: true</span> supaya response keluar real-time.
             Direkomendasikan untuk request panjang biar ga kena timeout 300 detik.
           </p>
         </header>
 
-        <h2 className="text-lg font-semibold text-slate-100">curl streaming</h2>
+        <h2 className="text-lg font-semibold text-foreground">curl streaming</h2>
         <CodeBlock code={STREAM_CURL} />
-        <p className="text-sm text-slate-400">
+        <p className="text-sm text-foreground-muted">
           Flag <span className="font-mono">-N</span> wajib supaya curl ga buffer output.
         </p>
 
-        <h2 className="text-lg font-semibold text-slate-100">Node SDK</h2>
+        <h2 className="text-lg font-semibold text-foreground">Node SDK</h2>
         <CodeBlock code={STREAM_NODE} />
 
-        <h2 className="text-lg font-semibold text-slate-100">Format chunk</h2>
-        <p className="text-sm text-slate-300">
+        <h2 className="text-lg font-semibold text-foreground">Format chunk</h2>
+        <p className="text-sm text-foreground-muted">
           Tiap chunk dimulai dengan <span className="font-mono">data:</span> diikuti JSON. Chunk terakhir
           adalah <span className="font-mono">data: [DONE]</span>. Field <span className="font-mono">usage</span>{" "}
           biasanya muncul di chunk sebelum DONE — gateway pakai itu untuk metering token akurat.
         </p>
 
-        <h2 className="text-lg font-semibold text-slate-100">Cancel</h2>
-        <p className="text-sm text-slate-300">
+        <h2 className="text-lg font-semibold text-foreground">Cancel</h2>
+        <p className="text-sm text-foreground-muted">
           Tutup koneksi HTTP (close/abort) untuk membatalkan request. Gateway nge-propagate cancellation ke
           upstream supaya saldo kamu ga terus dipake.
         </p>
 
-        <p className="text-sm text-slate-400">
+        <p className="text-sm text-foreground-muted">
           Lanjut: <a href="/docs/error-codes" className="text-ctos-accent hover:underline">Kode Galat</a> →
         </p>
       </article>

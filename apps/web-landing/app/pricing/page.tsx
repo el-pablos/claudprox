@@ -16,8 +16,8 @@ export default function PricingPage() {
           <a href="/" className="text-xs text-foreground-muted hover:text-ctos-accent">
             ← Beranda
           </a>
-          <h1 className="mt-4 text-4xl font-bold text-slate-50">Paket harga</h1>
-          <p className="mt-2 max-w-2xl text-slate-400">
+          <h1 className="mt-4 text-4xl font-bold text-foreground">Paket harga</h1>
+          <p className="mt-2 max-w-2xl text-foreground-muted">
             Bayar per kuota token plus durasi waktu. Refill nambah saldo, API key tetap.
           </p>
         </div>

@@ -20,8 +20,8 @@ export function PricingTable({ withCta = true }: { withCta?: boolean }) {
     <section id="harga" className="border-b border-ctos-border">
       <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-slate-50 sm:text-4xl">Paket harga</h2>
-          <p className="mt-3 text-slate-400">
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Paket harga</h2>
+          <p className="mt-3 text-foreground-muted">
             Bayar per kuota token plus durasi waktu. Konfirmasi manual via QRIS, BCA, atau VA.
           </p>
         </div>
@@ -43,18 +43,18 @@ export function PricingTable({ withCta = true }: { withCta?: boolean }) {
                   </span>
                 ) : null}
                 <CardHeader>
-                  <CardTitle className={featured ? "text-ctos-accent" : "text-slate-100"}>
+                  <CardTitle className={featured ? "text-ctos-accent" : "text-foreground"}>
                     {plan.name}
                   </CardTitle>
                   <div className="mt-3 flex items-baseline gap-2">
-                    <span className="text-3xl font-bold text-slate-50">
+                    <span className="text-3xl font-bold text-foreground">
                       {formatRupiah(plan.priceIdr)}
                     </span>
-                    <span className="text-sm text-slate-400">/{plan.durationDays} hari</span>
+                    <span className="text-sm text-foreground-muted">/{plan.durationDays} hari</span>
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-2 text-sm text-slate-300">
+                  <ul className="space-y-2 text-sm text-foreground-muted">
                     <li className="flex items-start gap-2">
                       <Check /> {formatTokens(plan.tokens)} token kuota
                     </li>

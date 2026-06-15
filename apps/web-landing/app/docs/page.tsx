@@ -28,8 +28,8 @@ export default function DocsIndex() {
       <DocsHeader />
       <section className="border-b border-ctos-border">
         <div className="mx-auto max-w-5xl px-6 py-16">
-          <h1 className="text-4xl font-bold text-slate-50">Dokumentasi</h1>
-          <p className="mt-3 text-slate-400">
+          <h1 className="text-4xl font-bold text-foreground">Dokumentasi</h1>
+          <p className="mt-3 text-foreground-muted">
             Dokumentasi resmi gateway. Endpoint OpenAI sama Anthropic compatible, jadi kamu pakai SDK existing.
           </p>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
@@ -40,7 +40,7 @@ export default function DocsIndex() {
                 className="block rounded-lg border border-ctos-border bg-ctos-panel p-6 transition hover:border-ctos-accent"
               >
                 <h2 className="text-lg font-semibold text-ctos-accent">{s.title}</h2>
-                <p className="mt-2 text-sm text-slate-400">{s.blurb}</p>
+                <p className="mt-2 text-sm text-foreground-muted">{s.blurb}</p>
               </a>
             ))}
           </div>

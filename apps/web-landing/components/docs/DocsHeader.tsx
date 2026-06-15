@@ -5,7 +5,7 @@ export function DocsHeader() {
         <a href="/" className="font-mono text-ctos-accent">
           ClaudProx
         </a>
-        <div className="flex items-center gap-5 text-slate-300">
+        <div className="flex items-center gap-5 text-foreground-muted">
           <a href="/docs" className="hover:text-ctos-accent">Docs</a>
           <a href="/pricing" className="hover:text-ctos-accent">Harga</a>
           <a href="https://dashboard-claudprox.tams.codes" className="hover:text-ctos-accent">Masuk</a>

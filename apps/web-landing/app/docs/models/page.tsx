@@ -18,15 +18,15 @@ export default function ModelsPage() {
       <article className="mx-auto max-w-3xl space-y-6 px-6 py-16">
         <header>
           <a href="/docs" className="text-xs text-foreground-muted hover:text-ctos-accent">← Docs</a>
-          <h1 className="mt-3 text-3xl font-bold text-slate-50">Model yang Didukung</h1>
-          <p className="mt-2 text-slate-400">
+          <h1 className="mt-3 text-3xl font-bold text-foreground">Model yang Didukung</h1>
+          <p className="mt-2 text-foreground-muted">
             Total {all.length} model. ID model versi user TANPA prefix kr/. Titik di versi upstream
             diganti strip — gateway nge-handle transform dua arah otomatis.
           </p>
         </header>
 
         <div className="rounded-lg border border-ctos-border bg-ctos-panel p-6">
-          <p className="text-sm text-slate-300">
+          <p className="text-sm text-foreground-muted">
             Variasi suffix per model: <span className="font-mono text-ctos-accent">-thinking</span>,{" "}
             <span className="font-mono text-ctos-accent">-agentic</span>,{" "}
             <span className="font-mono text-ctos-accent">-thinking-agentic</span>.
@@ -35,10 +35,10 @@ export default function ModelsPage() {
 
         {groups.map((g) => (
           <section key={g.label}>
-            <h2 className="mb-3 text-lg font-semibold text-slate-100">{g.label}</h2>
+            <h2 className="mb-3 text-lg font-semibold text-foreground">{g.label}</h2>
             <ul className="grid gap-1 sm:grid-cols-2">
               {g.items.map((m) => (
-                <li key={m} className="font-mono text-xs text-slate-300">
+                <li key={m} className="font-mono text-xs text-foreground-muted">
                   {m}
                 </li>
               ))}
@@ -46,7 +46,7 @@ export default function ModelsPage() {
           </section>
         ))}
 
-        <p className="text-sm text-slate-400">
+        <p className="text-sm text-foreground-muted">
           Lanjut: <a href="/docs/sse-streaming" className="text-ctos-accent hover:underline">SSE Streaming</a> →
         </p>
       </article>
